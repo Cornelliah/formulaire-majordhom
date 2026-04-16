@@ -13,12 +13,14 @@ export const AvailabilityChip: React.FC<Props> = ({
   minute,
   onDelete,
 }) => {
+  const formattedHour = hour.toString().padStart(2, "0");
+  const formattedMinute = minute.toString().padStart(2, "0");
   
 
   return (
     <div className="chip">
       <span>
-        {day} à {hour}h{minute}
+        {day} à {formattedHour}h{formattedMinute}
       </span>
 
       {onDelete && (

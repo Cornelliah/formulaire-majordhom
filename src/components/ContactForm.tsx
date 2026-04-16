@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {AvailabilityChip} from './AvailabilityChip';
+import  './ContactForm.css'
 
 type Availability = { 
     day: string; 
@@ -58,47 +59,51 @@ const addAvailability = () => {
 
 return (
     <div className="form-container">
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={handleSubmit} className='form'>
          <h2> CONTACTEZ L'AGENCE</h2>
          
 
          <div className="grid">
             
             <div className="left">
-               <h4>Vos coordonnées</h4>  
+               <h4>VOS COORDONNÉES</h4>  
                <div className="radio-group">
                     <input type="radio" name="gender" id="female"  checked={form.gender === "Mme"} onChange={handleChange}/>
                     <label htmlFor="female">Mme</label>
                     <input type="radio" name="gender" id="male"  checked={form.gender === "M"} onChange={handleChange} />
                     <label htmlFor="male">M</label>
                </div>
-               <input type="text" name="lastname" id="lastname" placeholder='Nom' value={form.lastname} onChange={handleChange}/>
-               <input type="text" name="firstname" id="firstname" placeholder='Prénom' value={form.firstname} onChange={handleChange}/>
+               <div className="name-row">
+                 <input type="text" name="lastname" id="lastname" placeholder='Nom' value={form.lastname} onChange={handleChange}/>
+                 <input type="text" name="firstname" id="firstname" placeholder='Prénom' value={form.firstname} onChange={handleChange}/>
+               </div>
                <input type="email" name="email" id="email" placeholder='Adresse mail' value={form.email} onChange={handleChange}/>
                <input type="tel" name="telephone" id="telephone" placeholder='Téléphone' value={form.telephone} onChange={handleChange}/>
               
-              <h4>Disponibilités pour une visite</h4>
-              <select name="day" id="day" onChange={(e) => setSelectedDay(e.target.value)}>
-                    {['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'].map(jour => (
-                         <option key={jour} value={jour}>{jour}</option>
-                    ))}              
-              </select>  
-              <select name="hour" id="hour" onChange={(e) => setSelectedHour(Number(e.target.value))}>
-                    {Array.from({ length: 12 }, (_, i) => i + 9).map(hour => (
-                          <option key={hour} value={hour}>{hour}h</option>
-                        ))
-                    }
+              <h4>DISPONIBILITÉS POUR UNE VISITE</h4>
+              <div className="availability-selectors">
+                <select name="day" id="day" onChange={(e) => setSelectedDay(e.target.value)}>
+                      {['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'].map(jour => (
+                           <option key={jour} value={jour}>{jour}</option>
+                      ))}              
+                </select>  
+                <select name="hour" id="hour" onChange={(e) => setSelectedHour(Number(e.target.value))}>
+                      {Array.from({ length: 12 }, (_, i) => i + 9).map(hour => (
+                            <option key={hour} value={hour}>{hour}h</option>
+                          ))
+                      }
+                  </select>
+                <select name="minute" id="minute" onChange={(e) => setSelectedMinute(Number(e.target.value))}>
+                      {[0, 15, 30, 45].map((min) => (
+                          <option key={min} value={min}>
+                          {min.toString().padStart(2, "0")}m
+                          </option>
+                      ))}
                 </select>
-              <select name="minute" id="minute" onChange={(e) => setSelectedMinute(Number(e.target.value))}>
-                    {[0, 15, 30, 45].map((min) => (
-                        <option key={min} value={min}>
-                        {min.toString().padStart(2, "0")}m
-                        </option>
-                    ))}
-              </select>
-              <button type="button"  onClick={addAvailability}>
-                    Ajouter dispo
-              </button>
+                <button type="button"  onClick={addAvailability}>
+                      AJOUTER <br/>DISPO
+                </button>
+              </div>
 
               <div className="availabilities">
                     {form.availabilities.map((a, index) => (
@@ -120,15 +125,17 @@ return (
     
             
             <div className="right">
-                <h4>Votre message</h4>
-                { ['Demande de visite', 'Être rappelé.e', 'Plus de photos' ].map((type) => (
-                        <label key={type}>
-                        <input type="radio" name="messagetype" id={type} value={type} checked={form.messagetype === type} onChange={handleChange}/>
-                        {type}
-                        </label>
-                    ))}
+                <h4>VOTRE MESSAGE</h4>
+                <div className="radio-group">
+                    { ['Demande de visite', 'Être rappelé.e', 'Plus de photos' ].map((type) => (
+                            <label key={type}>
+                            <input type="radio" name="messagetype" id={type} value={type} checked={form.messagetype === type} onChange={handleChange}/>
+                            {type}
+                            </label>
+                        ))}
+                </div>
                 <textarea name="message" id="message"  placeholder='Votre message' value={form.message} onChange={handleChange}></textarea>
-                <input type="submit" value="Envoyer" />
+                <input type="submit" className='submit' value="Envoyer" />
             </div>   
          </div>
         
