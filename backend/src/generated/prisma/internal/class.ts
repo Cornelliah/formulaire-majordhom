@@ -20,7 +20,7 @@ const config: runtime.GetPrismaClientConfig = {
   "clientVersion": "7.7.0",
   "engineVersion": "75cbdc1eb7150937890ad5465d861175c6624711",
   "activeProvider": "postgresql",
-  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Contact {\n  id             String   @id @default(uuid())\n  civilite       String?\n  nom            String\n  prenom         String?\n  email          String\n  telephone      String\n  message        String\n  demandeVisite  Boolean  @default(false)\n  etreRappele    Boolean  @default(false)\n  plusDePhotos   Boolean  @default(false)\n  disponibilites Json?\n  createdAt      DateTime @default(now())\n\n  @@map(\"contacts\")\n}\n",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client\"\n  output   = \"../src/generated/prisma/\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Contact {\n  id             String   @id @default(uuid())\n  civilite       String?\n  nom            String\n  prenom         String?\n  email          String\n  telephone      String\n  message        String\n  demandeVisite  Boolean  @default(false)\n  etreRappele    Boolean  @default(false)\n  plusDePhotos   Boolean  @default(false)\n  disponibilites Json?\n  createdAt      DateTime @default(now())\n\n  @@map(\"contacts\")\n}\n",
   "runtimeDataModel": {
     "models": {},
     "enums": {},

@@ -17,16 +17,16 @@ export const createContact = async (req: Request, res: Response): Promise<void> 
  
     const contact = await prisma.contact.create({
       data: {
-        civilite: validatedData.civilite,
-        nom: validatedData.nom,
-        prenom: validatedData.prenom,
+        civilite: validatedData.gender,
+        nom: validatedData.lastname,
+        prenom: validatedData.firstname,
         email: validatedData.email,
-        telephone: validatedData.telephone,
+        telephone: validatedData.phone,
         message: validatedData.message,
-        demandeVisite: validatedData.demandeVisite,
-        etreRappele: validatedData.etreRappele,
-        plusDePhotos: validatedData.plusDePhotos,
-        disponibilites: validatedData.disponibilites,
+        demandeVisite: validatedData.requestVisit,
+        etreRappele: validatedData.callMeBack,
+        plusDePhotos: validatedData.morePhotos,
+        disponibilites: validatedData.availabilities,
       },
     });
 
