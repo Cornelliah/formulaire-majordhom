@@ -182,13 +182,17 @@ export default function ContactForm() {
 
               <select onChange={(e) => setSelectedHour(Number(e.target.value))}>
                 {Array.from({ length: 12 }, (_, i) => i + 9).map(h => (
-                  <option key={h}>{h}h</option>
+                  <option key={h} value={h}>
+                    {h}h
+                  </option>
                 ))}
               </select>
 
               <select onChange={(e) => setSelectedMinute(Number(e.target.value))}>
                 {[0, 15, 30, 45].map(m => (
-                  <option key={m}>{m.toString().padStart(2, "0")}m</option>
+                  <option key={m} value={m}>
+                    {m.toString().padStart(2, "0")}m
+                  </option>
                 ))}
               </select>
 
