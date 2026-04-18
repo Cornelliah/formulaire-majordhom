@@ -1,0 +1,28 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+ 
+}
+
+datasource db {
+  provider = "postgresql"
+  
+}
+
+model Contact {
+  id              String   @id @default(uuid())
+  civilite        String?
+  nom             String
+  prenom          String?
+  email           String
+  telephone       String
+  message         String
+  demandeVisite   Boolean  @default(false)
+  etreRappele     Boolean  @default(false)
+  plusDePhotos    Boolean  @default(false)
+  disponibilites  Json?
+  createdAt       DateTime @default(now())
+
+  @@map("contacts")
+}
