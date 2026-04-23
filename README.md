@@ -1,6 +1,4 @@
-# FORMULAIRE DE CONTACT
-Je m'appelle Horiane HOUNKANRIN, je suis en mastère 1 informatique et systèmes d'information.   
-J'aimerais un stage d'une durée de 03 mois.  
+# FORMULAIRE DE CONTACT  
 [Linkedin](https://www.linkedin.com/in/horiane-c-m-hounkanrin-17b537224/)  
 [Portfolio](https://horiane-hounkanrin.netlify.app/)  
 [Github](https://github.com/Cornelliah)  
@@ -51,30 +49,4 @@ npm run dev
 Frontend : http://localhost:5173 (ou port Vite)  
 Backend : http://localhost:5000  
 
-# Questions  
-**Difficulté de l’exercice**  
-L’exercice était globalement intermédiaire.  
-Les principales difficultés rencontrées :  
-
-la synchronisation entre frontend et backend (naming des champs)  
-la configuration de Prisma avec PostgreSQL via Docker  
-
-**Nouveaux outils appris**  
-
-Prisma : découverte de la gestion des migrations et du client généré  
-Zod : validation propre et typée côté backend  
-
-**Place du développement web dans mon cursus** 
-Le développement web occupe une place centrale dans ma formation, elle est orientée développement full stack et IA.   
-Nous travaillons régulièrement sur des projets concrets qui permettent de mettre en pratique les notions vues en cours.  
-
-**Utilisation d’un LLM**  
-Oui  
-Utilisation principale :     
-Compréhension des erreurs techniques et amélioration des bonnes pratiques (naming, architecture)  
-
-Intégration dans le workflow :  
-Debug des erreurs
-Amélioration du code (refactor, structure)  
-Gain de temps sur les problèmes bloquants  
 
